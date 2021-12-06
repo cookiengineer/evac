@@ -1,0 +1,6 @@
+{
+	"name":    "base",
+	"main":    "./build/node.mjs",
+	"module":  "./build/node.mjs",
+	"browser": "./build/browser.mjs"
+}

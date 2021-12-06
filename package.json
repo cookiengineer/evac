@@ -1,0 +1,33 @@
+{
+	"name": "evac",
+	"description": "EVAC - Quick and automated backups",
+	"private": true,
+	"module": "./evac/index.mjs",
+	"bin": {
+		"evac": "./evac/evac.mjs"
+	},
+	"scripts": {
+		"lint": "npx eslint ./base ./evac",
+		"postinstall": "node ./make.mjs build",
+		"clean": "node ./make.mjs clean",
+		"clean:base": "node ./base/make.mjs clean",
+		"clean:evac": "node ./evac/make.mjs clean",
+		"build": "node ./make.mjs build",
+		"build:base": "node ./base/make.mjs build",
+		"build:evac": "node ./evac/make.mjs build"
+	},
+	"exports": {
+		"./base": {
+			"import": "./base/index.mjs",
+			"browser": "./base/build/browser.mjs",
+			"node": "./base/build/node.mjs"
+		},
+		"./evac": {
+			"evac": "./evac/index.mjs"
+		}
+	},
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.15.8",
+		"eslint": "^8.1.0"
+	}
+}
