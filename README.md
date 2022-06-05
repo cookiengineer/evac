@@ -8,8 +8,16 @@ functionalities.
 It makes time-incremental backups, and is meant to be run on a
 regular schedule (e.g. via systemd or as a cronjob).
 
+EVAC assumes that there are is a specific way to create a backup.
+The backup drive has to be mounted locally, and be reachable with
+non-sudo write rights.
 
-## Usage
+The restore functionality will ask for a `sudo` password, and only
+use it to restore configurations outside the `$HOME` folder of the
+current user.
+
+
+## CLI Usage
 
 ```bash
 # Show Help
@@ -26,22 +34,17 @@ evac restore /path/to/backup/drive;
 ```
 
 
-## Plugins
+## GUI Usage
 
-- `music` that backs up all `mp3` files in `~/Music`.
-- `software` that backs up all `git` repositories in `~/Software`.
+```bash
+# Spawns Electron UI
+evac gui;
+```
 
-- `chromium` that backs up important files in the Chromium profile.
-- `firefox` that backs up important files in the Firefox profile.
-- `thunderbird` that backs up important files in the Thunderbird profile.
-
-- `gnupg` that backs up all GPG keys in `~/.gnupg`.
-- `keepass` that backs up all keepass databases in `~`.
-- `openssh` that backs up all SSH keys in `~/.ssh`.
 
 ## License
 
 [EVAC](/evac) is licensed under [GNU GPL 3](./LICENSE_GPL3.txt).
 
-`(c) 2021 Cookie Engineer`
+`(c) 2021-2022 Cookie Engineer`
 
