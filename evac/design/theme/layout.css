@@ -1,0 +1,143 @@
+
+header {
+	display: block;
+	position: fixed;
+	width: auto;
+	height: 42px;
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: auto;
+	left: 0px;
+	line-height: 42px;
+	text-align: center;
+	vertical-align: middle;
+	background: #2f343f;
+	border: 0px solid transparent;
+	border-bottom: 2px solid #262a33;
+	border-radius: 0px;
+	-webkit-user-select: none;
+	-webkit-app-region: drag;
+}
+
+header ul {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	-webkit-app-region: no-drag;
+}
+
+header ul > li {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px 8px;
+	height: 24px;
+	line-height: 24px;
+	color: #a8b2bf;
+	font-family: 'cantarell';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	background: #414857;
+	border-top: 1px solid #2b2e39;
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid #2b2e39;
+	border-left: 1px solid transparent;
+	border-radius: 0px;
+	cursor: default;
+}
+
+header ul > li:hover {
+	color: #acb6c3;
+	background: #4f5665;
+	border-color: #393e4a;
+	cursor: default;
+}
+
+header ul > li:first-of-type {
+	border-top: 1px solid #2b2e39;
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid #2b2e39;
+	border-left: 1px solid #2b2e39;
+	border-radius: 4px 0px 0px 4px;
+}
+
+header ul > li:last-of-type {
+	border-top: 1px solid #2b2e39;
+	border-right: 1px solid #2b2e39;
+	border-bottom: 1px solid #2b2e39;
+	border-left: 1px solid transparent;
+	border-radius: 0px 4px 4px 0px;
+}
+
+header ul > li.active {
+	color: #ffffff;
+	background: #5294e2;
+	border-color: #2f343f;
+	cursor: default;
+}
+
+
+
+main {
+	position: fixed;
+	width: auto;
+	height: auto;
+	top: 44px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	font-family: 'cantarell';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	color: #d3dae3;
+	text-align: left;
+	background: #383c4a;
+	border: 0px solid transparent;
+	border-radius: 0px;
+	-webkit-user-select: auto;
+	-webkit-app-region: no-drag;
+}
+
+main section {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	transform: translate(100%, 0%);
+	transition: 250ms all ease-out;
+}
+
+main section.active {
+	transform: translate(0%, 0%);
+	transition: 250ms all ease-out;
+}
+
+main section.inactive {
+	transform: translate(-100%, 0%);
+	transition: 250ms all ease-out;
+}
+
+main section footer {
+	display: block;
+	position: fixed;
+	width: auto;
+	height: 42px;
+	margin: 0px;
+	padding: 0px 16px;
+	top: auto;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	line-height: 42px;
+	vertical-align: middle;
+	background: #2f343f;
+	border: 0px solid transparent;
+	border-top: 2px solid #262a33;
+	border-radius: 0px;
+	-webkit-user-select: none;
+}

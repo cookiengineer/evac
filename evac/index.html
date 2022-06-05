@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+		<link rel="stylesheet" href="./design/index.css">
+		<title>EVAC</title>
+	</head>
+	<body>
+		<header>
+			<ul><li class="active" id="configure">Configure</li><li id="collect">Collect</li><li id="backup-restore">Backup / Restore</li></ul>
+		</header>
+		<main>
+			<section id="configure" class="active">
+				<h3>Task</h3>
+				<fieldset id="configure-task">
+					<div>
+						<input type="radio" id="configure-backup" name="action" value="backup" checked>
+						<label for="configure-backup">Backup data to an external hard drive</label>
+					</div>
+					<div>
+						<input type="radio" id="configure-restore" name="action" value="restore">
+						<label for="configure-restore">Restore data from an external hard drive</label>
+					</div>
+					<br>
+					<div>
+						<input type="file" id="configure-source_target" name="collect-source_target" webkitdirectory/>
+						<label for="configure-source_target"><button>Select</button> the backup folder or mounted hard drive</label>
+					</div>
+					<p id="configure-task-message"><em>/home/$USER -&gt; backup -&gt; /run/media/backup</em></p>
+				</fieldset>
+				<h3>Plugins</h3>
+				<fieldset id="configure-plugins-folder">
+					<legend>Home Folder Integrations</legend>
+					<div>
+						<input type="checkbox" id="plugin-documents" name="plugin-documents"><label for="plugin-documents">Documents</label>
+						<span class="tooltip">Collects Documents and Scans in <em>~/Documents</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-games" name="plugin-games"><label for="plugin-games">Games</label>
+						<span class="tooltip">Collects Wine Profiles and other Emulator Profiles in <em>~/Games</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-music" name="plugin-music"><label for="plugin-music">Music</label>
+						<span class="tooltip">Collects MP3 and FLAC files in <em>~/Music</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-pictures" name="plugin-pictures"><label for="plugin-pictures">Pictures</label>
+						<span class="tooltip">Collects Pictures and Photos in <em>~/Pictures</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-software" name="plugin-software"><label for="plugin-software">Software</label>
+						<span class="tooltip">Collects Git Organizations and Repositories in <em>~/Software</em>.</span>
+					</div>
+				</fieldset>
+				<fieldset id="configure-plugins-software">
+					<legend>Software Integrations</legend>
+					<div>
+						<input type="checkbox" id="plugin-bash" name="plugin-bash"><label for="plugin-bash">Bash</label>
+						<span class="tooltip">Collects configurations in <em>~/.bashrc</em> and <em>~/.bash_profile</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-barrier" name="plugin-barrier"><label for="plugin-barrier">Barrier</label>
+						<span class="tooltip">Collects configurations in <em>~/.local/share/barrier</em> and <em>/etc/barrier.conf</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-chromium" name="plugin-chromium"><label for="plugin-chromium">Chromium</label>
+						<span class="tooltip">Collects the Chromium profile in <em>~/.config/chromium</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-firefox" name="plugin-firefox"><label for="plugin-firefox">Firefox</label>
+						<span class="tooltip">Collects the Firefox profile(s) in <em>~/.mozilla</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-gnupg" name="plugin-gnupg"><label for="plugin-gnupg">GnuPG</label>
+						<span class="tooltip">Collects private and public keys in <em>~/.gnupg</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-i3" name="plugin-i3"><label for="plugin-i3">i3 / i3status</label>
+						<span class="tooltip">Collects configurations in <em>~/.config/i3</em> and <em>~/.config/i3status</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-keypassxc" name="plugin-keypassxc"><label for="plugin-keypassxc">KeyPassXC</label>
+						<span class="tooltip">Collects password databases in <em>~</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-kitty" name="plugin-kitty"><label for="plugin-kitty">KiTTY</label>
+						<span class="tooltip">Collects configurations in <em>~/.config/kitty</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-opensnitch" name="plugin-opensnitch"><label for="plugin-opensnitch">OpenSnitch</label>
+						<span class="tooltip">Collects rules and configurations in <em>/etc/opensnitchd</em> and <em>~/.config/opensnitch</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-openssh" name="plugin-openssh"><label for="plugin-openssh">OpenSSH</label>
+						<span class="tooltip">Collects configurations and SSH private and public keys in <em>~/.ssh</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-thunderbird" name="plugin-thunderbird"><label for="plugin-thunderbird">Thunderbird</label>
+						<span class="tooltip">Collects Thunderbird profile(s) in <em>~/.mozilla</em>.</span>
+					</div>
+					<div>
+						<input type="checkbox" id="plugin-vim" name="plugin-vim"><label for="plugin-vim">VIM</label>
+						<span class="tooltip">Collects VIM configurations and plugins in <em>~/.vimrc</em> and <em>~/.vim</em>.</span>
+					</div>
+				</fieldset>
+				<footer><button data-action="quit">Quit EVAC</button><button data-action="next">Next Step</button></footer>
+			</section>
+			<section id="backup">
+				TODO: Backup View
+				<article>
+					<label for="collect-progress"></label>
+					<progress value="75" max="100"></progress>
+					<div>
+						Selected Plugins: (none)
+					</div>
+				</article>
+			</section>
+			<section id="restore">
+				TODO: Restore View
+			</section>
+		</main>
+	</body>
+</html>

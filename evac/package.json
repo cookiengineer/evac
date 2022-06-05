@@ -1,0 +1,14 @@
+{
+	"name": "EVAC",
+	"version": "1.0.0",
+	"description": "EVAC - Automateable Backup Tool",
+	"main": "main.js",
+	"author": "Cookie Engineer",
+	"license": "GPL3",
+	"dependencies": {
+		"electron": "^19.0.3"
+	},
+	"scripts": {
+		"run": "electron ."
+	}
+}
